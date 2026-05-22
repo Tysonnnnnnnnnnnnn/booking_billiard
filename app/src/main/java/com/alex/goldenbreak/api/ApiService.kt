@@ -7,6 +7,8 @@ import com.alex.goldenbreak.model.RegisterResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
+import com.alex.goldenbreak.model.ReservationRequest
+import com.alex.goldenbreak.model.ReservationResponse
 
 interface ApiService {
 
@@ -19,4 +21,11 @@ interface ApiService {
     fun login(
         @Body request: LoginRequest
     ): Call<LoginResponse>
+
+    @POST("reservation")
+    fun createReservation(
+        @Body request: ReservationRequest
+    ): Call<ReservationResponse>
+
+
 }
