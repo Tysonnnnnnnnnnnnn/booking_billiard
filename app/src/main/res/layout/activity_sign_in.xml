@@ -1,93 +1,342 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0E1A0E"
+    android:fillViewport="true"
     tools:context=".SignInActivity">
 
-    <Button
-        android:id="@+id/btnSignIn"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="220dp"
-        android:backgroundTint="#0057FF"
-        android:text="Sign In"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="340dp"
-        android:drawableStart="@drawable/lockkey"
-        android:drawablePadding="12dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/etUsername3"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="360dp"
-        android:drawableStart="@drawable/user"
-        android:drawablePadding="12dp"
-        android:hint="Username"
-        android:inputType="textPersonName"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleSignUp"
-        app:layout_constraintVertical_bias="0.745" />
-
-    
-
-    <TextView
-        android:id="@+id/tvTitleSignUp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="520dp"
-        android:text="Sign In"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logoSignUp" />
+        android:orientation="vertical"
+        android:paddingBottom="40dp">
 
-    <ImageView
-        android:id="@+id/logoSignUp"
-        android:layout_width="133dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/rack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- ===== HERO SECTION ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="56dp"
+            android:paddingBottom="8dp">
+
+            <!-- Garis atas gold -->
+            <View
+                android:layout_width="160dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:background="#D4AF37" />
+
+            <!-- Logo berlapis seperti bola biliar -->
+            <FrameLayout
+                android:layout_width="110dp"
+                android:layout_height="110dp">
+
+                <View
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:background="@drawable/bg_ball_outer_ring" />
+
+                <View
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_ball_gold_ring" />
+
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_ball_inner" />
+
+                <ImageView
+                    android:id="@+id/logoSignUp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/rack"
+                    app:tint="#D4AF37" />
+            </FrameLayout>
+
+            <!-- Nama App -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:fontFamily="serif"
+                android:letterSpacing="0.12"
+                android:text="GOLDEN BREAK"
+                android:textColor="#D4AF37"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:letterSpacing="0.20"
+                android:text="BILLIARD CLUB"
+                android:textColor="#6B6040"
+                android:textSize="10sp" />
+
+            <!-- Ornamen diamond -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="56dp"
+                    android:layout_height="1dp"
+                    android:background="@drawable/divider_gold_fade_right" />
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_diamond_gold" />
+
+                <View
+                    android:layout_width="56dp"
+                    android:layout_height="1dp"
+                    android:background="@drawable/divider_gold_fade_left" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ===== FORM CARD ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_form_card"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <TextView
+                android:id="@+id/tvTitleSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:letterSpacing="0.06"
+                android:text="Sign In"
+                android:textColor="#D4AF37"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="24dp"
+                android:text="Masuk dan mulai bertanding"
+                android:textColor="#4A4730"
+                android:textSize="12sp" />
+
+            <!-- Label Username -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:letterSpacing="0.10"
+                android:text="USERNAME"
+                android:textColor="#9A832A"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <!-- Input Username -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/bg_input_gold"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/user"
+                    app:tint="#D4AF37" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#2A2A18" />
+
+                <EditText
+                    android:id="@+id/etUsername3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="Masukkan username"
+                    android:inputType="textPersonName"
+                    android:textColor="#E8D48A"
+                    android:textColorHint="#3A3820"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Label Password -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:letterSpacing="0.10"
+                android:text="PASSWORD"
+                android:textColor="#9A832A"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <!-- Input Password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_input_gold"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/lockkey"
+                    app:tint="#D4AF37" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#2A2A18" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="Masukkan password"
+                    android:inputType="textPassword"
+                    android:textColor="#E8D48A"
+                    android:textColorHint="#3A3820"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Lupa Password -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="24dp"
+                android:text="Lupa password?"
+                android:textColor="#6B6040"
+                android:textSize="11sp" />
+
+            <!-- Tombol Sign In -->
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_button_gold"
+                app:backgroundTint="@null"
+                android:elevation="4dp"
+                android:letterSpacing="0.15"
+                android:text="MASUK SEKARANG"
+                android:textColor="#1A1A0A"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Divider -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#2A2A18" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:text="atau"
+                    android:textColor="#3A3820"
+                    android:textSize="11sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#2A2A18" />
+            </LinearLayout>
+
+            <!-- Link Daftar -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="14dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum punya akun? "
+                    android:textColor="#3A3820"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvGoToSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Daftar Sekarang"
+                    android:textColor="#D4AF37"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Dekorasi bola biliar bawah -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_red" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_yellow" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_black" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_yellow" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:background="@drawable/ball_red" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
