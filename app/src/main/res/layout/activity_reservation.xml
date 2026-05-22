@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tvTitleReservation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reservation"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+
+        <TextView
+            android:text="Reservation Name"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etResName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Type your full name..."
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"/>
+
+
+        <TextView
+            android:text="Check-In Date"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etCheckInDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Select check-in date..."
+            android:padding="10dp"
+            android:focusable="false"
+            android:clickable="true"
+            android:longClickable="false"
+            android:background="@android:drawable/edit_text"/>
+
+        <TextView
+            android:text="Only reservations within 1 week from today's date are allowed"
+            android:textColor="#0057FF"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:text="Check-In Time"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <EditText
+                android:id="@+id/etTime"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="08.00"
+                android:background="@android:drawable/edit_text"/>
+
+
+            <RadioButton
+                android:id="@+id/rbAM"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="AM"
+                android:gravity="center"
+                android:layout_marginStart="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rbPM"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="PM"
+                android:gravity="center"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:text="Table Type"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvTableType"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="16sp"
+            android:text="Reguler"
+            android:padding="10dp"
+            android:gravity="center_vertical"/>
+
+
+
+
+        <TextView
+            android:text="Table Quantity"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etTableQty"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Type the table quantity"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"/>
+
+
+        <TextView
+            android:text="Playing Hour"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etPlayingHour"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:hint="Type your playing hour(s)"
+                android:padding="10dp"
+                android:background="@android:drawable/edit_text"/>
+
+            <Button
+                android:layout_width="65dp"
+                android:layout_height="50dp"
+                android:text="Hour"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#000000"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Continue"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#003366"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="90dp"/>
+
+    </LinearLayout>
+</ScrollView>

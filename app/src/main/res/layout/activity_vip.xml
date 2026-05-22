@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- FOTO -->
+        <ImageView
+            android:id="@+id/imgRoom"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/vip" />
+
+        <!-- AREA PUTIH -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- TITLE -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIP"
+                android:textStyle="bold"
+                android:textSize="22sp" />
+
+            <!-- LOCATION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📍 Badung, Pasteur"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+            <!-- RATING -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐ 4.8  •  1k+ Tersewa"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp" />
+
+            <!-- ADDRESS TITLE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp" />
+
+            <!-- ADDRESS -->
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jl. Gajah Mada no.541, kuta.kec.Bali, Indonesia"
+                android:textSize="14sp" />
+
+            <!-- OPEN HOURS TITLE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open Hours"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp" />
+
+            <!-- OPEN HOURS VALUE -->
+            <TextView
+                android:id="@+id/tvOpenHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.00–23.00"
+                android:textSize="14sp" />
+
+            <!-- PRICE TITLE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIP"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp" />
+
+            <!-- PRICE VALUE -->
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp 90.000/Hour"
+                android:textColor="#0066FF"
+                android:textSize="16sp" />
+
+            <!-- TABLE NUMBER TITLE -->
+            <TextView
+                android:id="@+id/tvTableNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Table Number"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="18dp" />
+
+            <!-- GRID TABLE BUTTON -->
+            <GridLayout
+                android:id="@+id/gridTables"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="5"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true"
+                android:layout_marginTop="12dp">
+
+                 <Button android:id="@+id/btn11" android:text="1"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn12" android:text="2"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn13" android:text="3"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn14" android:text="4"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn15" android:text="5"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+
+                <Button android:id="@+id/btn16" android:text="6"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn17" android:text="7"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn18" android:text="8"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn19" android:text="9"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn20" android:text="10"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+            </GridLayout>
+
+            <!-- BUTTON RESERVE -->
+            <Button
+                android:id="@+id/btnReserve"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="90dp"
+                android:text="Reserve"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#004C8C" />
+
+        </LinearLayout>
+
+        <!-- SPACE FOR NAVBAR -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="90dp" />
+
+    </LinearLayout>
+</ScrollView>

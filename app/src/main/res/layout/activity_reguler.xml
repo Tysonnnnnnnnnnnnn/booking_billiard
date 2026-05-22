@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imgRoom"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/reguler" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reguler"
+                android:textStyle="bold"
+                android:textSize="22sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📍 Badung, Pasteur"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐ 4.8  •  1k+ Tersewa"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jl. Gajah Mada no.541, kuta.kec.Bali, Indonesia"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open Hours"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvOpenHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.00–23.00"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reguler"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp 40.000/Hour"
+                android:textColor="#0066FF"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/tvTableNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Table Number"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="18dp" />
+
+
+            <GridLayout
+                android:id="@+id/gridTables"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="5"
+                android:layout_marginTop="12dp"
+                android:useDefaultMargins="true">
+
+                <Button android:id="@+id/btn1" android:text="1"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn2" android:text="2"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn3" android:text="3"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn4" android:text="4"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn5" android:text="5"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+
+                <Button android:id="@+id/btn6" android:text="6"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn7" android:text="7"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn8" android:text="8"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn9" android:text="9"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+                <Button android:id="@+id/btn10" android:text="10"
+                    android:layout_width="65dp" android:layout_height="60dp"/>
+            </GridLayout>
+
+
+            <Button
+                android:id="@+id/btnReserve"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="90dp"
+                android:text="Reserve"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#004C8C"
+                android:layout_gravity="end"/>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="90dp" />
+
+    </LinearLayout>
+</ScrollView>
