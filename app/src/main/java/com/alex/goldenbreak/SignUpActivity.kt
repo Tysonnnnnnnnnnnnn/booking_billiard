@@ -82,7 +82,7 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             val request = RegisterRequest(
-                username = username,
+                name = username,
                 email = email,
                 password = password
             )

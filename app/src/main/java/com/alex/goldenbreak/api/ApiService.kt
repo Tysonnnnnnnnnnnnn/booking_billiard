@@ -22,7 +22,7 @@ interface ApiService {
         @Body request: LoginRequest
     ): Call<LoginResponse>
 
-    @POST("reservation")
+    @POST("bookings")
     fun createReservation(
         @Body request: ReservationRequest
     ): Call<ReservationResponse>
