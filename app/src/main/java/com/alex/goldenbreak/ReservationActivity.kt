@@ -124,10 +124,10 @@ class ReservationActivity : AppCompatActivity() {
             try {
 
                 val name =
-                    etName.text.toString()
+                    etName.text.toString().trim() // Ditambahkan .trim() agar spasi ujung hilang
 
                 val dateRaw =
-                    etCheckInDate.text.toString()
+                    etCheckInDate.text.toString().trim()
 
                 val dateParts =
                     dateRaw.split("/")
@@ -148,7 +148,7 @@ class ReservationActivity : AppCompatActivity() {
                     "$day $monthName $year"
 
                 val timeText =
-                    etTime.text.toString()
+                    etTime.text.toString().trim()
 
                 val ampm =
                     if (rbAM.isChecked)
@@ -160,10 +160,10 @@ class ReservationActivity : AppCompatActivity() {
                     "$timeText $ampm"
 
                 val tableQty =
-                    etTableQty.text.toString().toInt()
+                    etTableQty.text.toString().trim().toInt()
 
                 val playHours =
-                    etPlayingHour.text.toString().toInt()
+                    etPlayingHour.text.toString().trim().toInt()
 
                 val pricePerHour =
                     if (roomType == "Reguler")
@@ -202,11 +202,6 @@ class ReservationActivity : AppCompatActivity() {
                                 response.code().toString()
                             )
 
-                            Log.d(
-                                "API_RESPONSE_BODY",
-                                response.body().toString()
-                            )
-
                             if (response.isSuccessful &&
                                 response.body() != null
                             ) {
@@ -232,6 +227,7 @@ class ReservationActivity : AppCompatActivity() {
                                 intent.putExtra("totalPrice", totalPrice)
 
                                 startActivity(intent)
+                                finish() // Ditambahkan finish() agar ketika di ProgressActivity tidak bisa back ke form lagi
 
                             } else {
 
@@ -243,9 +239,10 @@ class ReservationActivity : AppCompatActivity() {
                                     errorText ?: "No Error"
                                 )
 
+                                // Perbaikan tampilan toast error agar rapi tidak memuntahkan isi HTML mentah
                                 Toast.makeText(
                                     this@ReservationActivity,
-                                    "Laravel Error : $errorText",
+                                    "Gagal membuat reservasi. Periksa server atau input data.",
                                     Toast.LENGTH_LONG
                                 ).show()
                             }

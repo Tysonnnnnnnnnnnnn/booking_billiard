@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView // Ditambahkan untuk TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.alex.goldenbreak.api.RetrofitClient
@@ -23,6 +24,18 @@ class SignInActivity : AppCompatActivity() {
         val etPassword = findViewById<EditText>(R.id.etPassword)
 
         val btnSignIn = findViewById<Button>(R.id.btnSignIn)
+
+        // =========================================================================
+        // PERBAIKAN TAMBAHAN: Menghubungkan TextView dan memberi aksi Klik
+        // =========================================================================
+        val tvToSignUp = findViewById<TextView>(R.id.tvGoToSignUp) // Pastikan ID di XML activity_sign_in adalah tvToSignUp
+
+        tvToSignUp.setOnClickListener {
+            val intent = Intent(this@SignInActivity, SignUpActivity::class.java)
+            startActivity(intent)
+            // finish() // Boleh diaktifkan jika tidak ingin user bisa back lagi ke halaman login setelah di halaman daftar
+        }
+        // =========================================================================
 
         btnSignIn.setOnClickListener {
 
