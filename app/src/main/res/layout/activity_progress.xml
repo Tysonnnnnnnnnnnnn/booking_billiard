@@ -1,211 +1,459 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0E1A0E"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="16dp">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Progress"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_gravity="center" />
-
-
+        <!-- ===== JUDUL HALAMAN ===== -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp">
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="28dp"
+                android:background="#D4AF37" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="serif"
+                android:letterSpacing="0.05"
+                android:text="PROGRESS"
+                android:textColor="#D4AF37"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ===== CARD 1 : COUNTDOWN ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_form_card"
             android:orientation="vertical"
             android:padding="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/box_border">
+            android:layout_marginBottom="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Please Send The Payment In"
-                android:textSize="16sp"
+                android:text="STATUS PEMBAYARAN"
+                android:textColor="#9A832A"
+                android:textSize="9sp"
+                android:letterSpacing="0.10"
                 android:textStyle="bold"
-                android:layout_gravity="center" />
+                android:layout_marginBottom="10dp" />
 
+            <!-- Status Badge -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_badge_gold"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginBottom="14dp">
 
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:background="@drawable/ball_yellow"
+                    android:layout_marginEnd="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MENUNGGU KONFIRMASI"
+                    android:textColor="#1A1A0A"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08" />
+            </LinearLayout>
+
+            <!-- Countdown Box -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/tvHours"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                android:background="@drawable/bg_input_dark"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="   Hours :   "
-                    android:textSize="16sp" />
+                    android:layout_gravity="center"
+                    android:text="SELESAIKAN PEMBAYARAN DALAM"
+                    android:textColor="#9A832A"
+                    android:textSize="9sp"
+                    android:letterSpacing="0.08"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="14dp" />
 
-                <TextView
-                    android:id="@+id/tvMinutes"
+                <!-- Angka Timer -->
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="00"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- JAM -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tvHours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="01"
+                            android:textColor="#D4AF37"
+                            android:textSize="32sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="JAM"
+                            android:textColor="#6B6040"
+                            android:textSize="9sp"
+                            android:letterSpacing="0.08"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" : "
+                        android:textColor="#6B6040"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="12dp" />
+
+                    <!-- MENIT -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tvMinutes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00"
+                            android:textColor="#D4AF37"
+                            android:textSize="32sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MENIT"
+                            android:textColor="#6B6040"
+                            android:textSize="9sp"
+                            android:letterSpacing="0.08"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" : "
+                        android:textColor="#6B6040"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="12dp" />
+
+                    <!-- DETIK -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tvSeconds"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00"
+                            android:textColor="#D4AF37"
+                            android:textSize="32sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DETIK"
+                            android:textColor="#6B6040"
+                            android:textSize="9sp"
+                            android:letterSpacing="0.08"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tvDeadline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="   Minutes :   "
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tvSeconds"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="00"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" Seconds"
-                    android:textSize="16sp" />
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="⚠ Batas waktu: 1 Januari 2025, 08.00 WIB"
+                    android:textColor="#6B6040"
+                    android:textSize="10sp" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/tvDeadline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="(Before 1 January 2025 ,08.00 WIB)"
-                android:textColor="#808080"
-                android:textSize="12sp"
-                android:layout_marginTop="6dp"
-                android:layout_gravity="center" />
-
         </LinearLayout>
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Payment Method"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp" />
-
-
+        <!-- ===== CARD 2 : METODE PEMBAYARAN ===== -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_form_card"
             android:orientation="vertical"
-            android:layout_marginTop="10dp">
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="METODE PEMBAYARAN"
+                android:textColor="#9A832A"
+                android:textSize="9sp"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp" />
+
+            <!-- BCA -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_dark"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="6dp">
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:layout_marginBottom="8dp">
 
-                <ImageView
-                    android:src="@drawable/bca"
-                    android:layout_width="60dp"
-                    android:layout_height="20dp" />
-
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="0001112233444555"
-                    android:textSize="16sp" />
+                    android:background="@drawable/bg_badge_gold"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:layout_marginEnd="14dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BCA"
+                        android:textColor="#1A1A0A"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0001 1122 3344 4555"
+                    android:textColor="#E8D48A"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace" />
             </LinearLayout>
 
+            <!-- BRI -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_dark"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="6dp">
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:layout_marginBottom="8dp">
 
-                <ImageView
-                    android:src="@drawable/bri"
-                    android:layout_width="60dp"
-                    android:layout_height="20dp" />
-
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="0001112233444555"
-                    android:textSize="16sp" />
+                    android:background="@drawable/bg_badge_gold"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:layout_marginEnd="14dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BRI"
+                        android:textColor="#1A1A0A"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0001 1122 3344 4555"
+                    android:textColor="#E8D48A"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace" />
             </LinearLayout>
 
+            <!-- MANDIRI -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_dark"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="6dp">
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
 
-                <ImageView
-                    android:src="@drawable/mandiri"
-                    android:layout_width="60dp"
-                    android:layout_height="20dp" />
-
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="0001112233444555"
-                    android:textSize="16sp" />
+                    android:background="@drawable/bg_badge_gold"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:layout_marginEnd="14dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MANDIRI"
+                        android:textColor="#1A1A0A"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0001 1122 3344 4555"
+                    android:textColor="#E8D48A"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace" />
             </LinearLayout>
         </LinearLayout>
 
-
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- ===== CARD 3 : TOTAL HARGA ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Price"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp" />
+            android:background="@drawable/bg_form_card"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
 
-        <TextView
-            android:id="@+id/tvTotalPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rp 0"
-            android:textSize="18sp"
-            android:textColor="#0066FF"
-            android:layout_marginTop="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RINGKASAN TAGIHAN"
+                android:textColor="#9A832A"
+                android:textSize="9sp"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input_dark"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TOTAL PEMBAYARAN"
+                    android:textColor="#9A832A"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08" />
+
+                <TextView
+                    android:id="@+id/tvTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 0"
+                    android:textColor="#D4AF37"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ===== TOMBOL KONFIRMASI ===== -->
         <Button
             android:id="@+id/btnUpdateStatus"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:text="Update Payment Status"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#003A70"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="90dp" />
-
-        <View
             android:layout_width="match_parent"
-            android:layout_height="80dp" />
+            android:layout_height="52dp"
+            android:background="@drawable/bg_button_gold"
+            app:backgroundTint="@null"
+            android:elevation="4dp"
+            android:letterSpacing="0.15"
+            android:text="KONFIRMASI PEMBAYARAN"
+            android:textColor="#1A1A0A"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Bola dekorasi -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_red" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_yellow" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_black" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_yellow" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:background="@drawable/ball_red" />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="90dp" />
 
     </LinearLayout>
 </ScrollView>

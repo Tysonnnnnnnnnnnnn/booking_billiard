@@ -1,193 +1,390 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0E1A0E"
     android:fillViewport="true">
 
     <LinearLayout
-        android:padding="20dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-
-        <TextView
-            android:id="@+id/tvTitleReservation"
-            android:layout_width="wrap_content"
+        <!-- ===== JUDUL HALAMAN ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Reservation"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
-
-
-        <TextView
-            android:text="Reservation Name"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <EditText
-            android:id="@+id/etResName"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Type your full name..."
-            android:padding="10dp"
-            android:background="@android:drawable/edit_text"/>
-
-
-        <TextView
-            android:text="Check-In Date"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <EditText
-            android:id="@+id/etCheckInDate"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Select check-in date..."
-            android:padding="10dp"
-            android:focusable="false"
-            android:clickable="true"
-            android:longClickable="false"
-            android:background="@android:drawable/edit_text"/>
-
-        <TextView
-            android:text="Only reservations within 1 week from today's date are allowed"
-            android:textColor="#0057FF"
-            android:textSize="12sp"
-            android:layout_marginTop="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-        <TextView
-            android:text="Check-In Time"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <LinearLayout
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp">
 
+            <View
+                android:layout_width="3dp"
+                android:layout_height="28dp"
+                android:background="#D4AF37" />
+
+            <TextView
+                android:id="@+id/tvTitleReservation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="serif"
+                android:letterSpacing="0.05"
+                android:text="RESERVASI"
+                android:textColor="#D4AF37"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ===== FORM CARD ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_form_card"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <!-- ─── Nama Reservasi ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NAMA RESERVASI"
+                android:textColor="#9A832A"
+                android:textSize="9sp"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
 
             <EditText
-                android:id="@+id/etTime"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="08.00"
-                android:background="@android:drawable/edit_text"/>
+                android:id="@+id/etResName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_dark"
+                android:hint="Masukkan nama lengkap..."
+                android:textColorHint="#3A3A20"
+                android:textColor="#E8D48A"
+                android:textSize="13sp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:inputType="textPersonName" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2A2A18"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
 
-            <RadioButton
-                android:id="@+id/rbAM"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:text="AM"
-                android:gravity="center"
-                android:layout_marginStart="8dp"/>
+            <!-- ─── Tanggal Check-In ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TANGGAL CHECK-IN"
+                android:textColor="#9A832A"
+                android:textSize="9sp"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
 
-            <RadioButton
-                android:id="@+id/rbPM"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:text="PM"
-                android:gravity="center"
-                android:layout_marginStart="8dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_dark"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/clock"
+                    app:tint="#9A832A"
+                    android:layout_marginEnd="10dp" />
+
+                <EditText
+                    android:id="@+id/etCheckInDate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Pilih tanggal check-in..."
+                    android:textColorHint="#3A3A20"
+                    android:textColor="#E8D48A"
+                    android:textSize="13sp"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:longClickable="false" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="⚠ Reservasi hanya tersedia dalam 1 minggu dari hari ini"
+                android:textColor="#6B6040"
+                android:textSize="10sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2A2A18"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- ─── Jam Check-In ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JAM CHECK-IN"
+                android:textColor="#9A832A"
+                android:textSize="9sp"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etTime"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="2"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:gravity="center"
+                    android:text="08.00"
+                    android:textColor="#E8D48A"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:inputType="numberDecimal" />
+
+                <!-- AM Button -->
+                <RadioButton
+                    android:id="@+id/rbAM"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/bg_table_btn"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="AM"
+                    android:textColor="#D4AF37"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- PM Button -->
+                <RadioButton
+                    android:id="@+id/rbPM"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_table_btn"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="PM"
+                    android:textColor="#D4AF37"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
         </LinearLayout>
 
-
-        <TextView
-            android:text="Table Type"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/tvTableType"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:textSize="16sp"
-            android:text="Reguler"
-            android:padding="10dp"
-            android:gravity="center_vertical"/>
-
-
-
-
-        <TextView
-            android:text="Table Quantity"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <EditText
-            android:id="@+id/etTableQty"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Type the table quantity"
-            android:padding="10dp"
-            android:background="@android:drawable/edit_text"/>
-
-
-        <TextView
-            android:text="Playing Hour"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+        <!-- ===== FORM CARD 2 ===== -->
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_form_card"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <!-- ─── Tipe Meja ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TIPE MEJA"
+                android:textColor="#9A832A"
+                android:textSize="9sp"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_dark"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <TextView
+                    android:id="@+id/tvTableType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reguler"
+                    android:textColor="#E8D48A"
+                    android:textSize="13sp" />
+
+                <!-- Badge tipe -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_badge_gold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MEJA"
+                        android:textColor="#1A1A0A"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2A2A18"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- ─── Jumlah Meja ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JUMLAH MEJA"
+                android:textColor="#9A832A"
+                android:textSize="9sp"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
 
             <EditText
-                android:id="@+id/etPlayingHour"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:hint="Type your playing hour(s)"
-                android:padding="10dp"
-                android:background="@android:drawable/edit_text"/>
+                android:id="@+id/etTableQty"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_dark"
+                android:hint="Masukkan jumlah meja..."
+                android:textColorHint="#3A3A20"
+                android:textColor="#E8D48A"
+                android:textSize="13sp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:inputType="number" />
 
-            <Button
-                android:layout_width="65dp"
-                android:layout_height="50dp"
-                android:text="Hour"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#000000"
-                android:textColor="#FFFFFF"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2A2A18"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- ─── Jam Bermain ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JAM BERMAIN"
+                android:textColor="#9A832A"
+                android:textSize="9sp"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etPlayingHour"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:hint="Jumlah jam bermain..."
+                    android:textColorHint="#3A3A20"
+                    android:textColor="#E8D48A"
+                    android:textSize="13sp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:inputType="number" />
+
+                <!-- Badge Jam -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_badge_gold"
+                    android:gravity="center"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="JAM"
+                        android:textColor="#1A1A0A"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
 
-
+        <!-- ===== TOMBOL LANJUTKAN ===== -->
         <Button
             android:id="@+id/btnContinue"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="Continue"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="#003366"/>
+            android:layout_height="52dp"
+            android:background="@drawable/bg_button_gold"
+            app:backgroundTint="@null"
+            android:elevation="4dp"
+            android:letterSpacing="0.15"
+            android:text="LANJUTKAN"
+            android:textColor="#1A1A0A"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp" />
 
+        <!-- Bola dekorasi -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="90dp"/>
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_red" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_yellow" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_black" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:layout_marginEnd="8dp" android:background="@drawable/ball_yellow" />
+            <View android:layout_width="10dp" android:layout_height="10dp"
+                android:background="@drawable/ball_red" />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="90dp" />
 
     </LinearLayout>
 </ScrollView>
