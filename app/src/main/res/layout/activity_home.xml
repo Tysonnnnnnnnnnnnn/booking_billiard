@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#0E1A0E">
+
+<!-- ============================================================ -->
+<!--   KONTEN UTAMA — ScrollView berhenti di atas navbar          -->
+<!-- ============================================================ -->
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_above="@+id/bottomNavBar"
     android:background="#0E1A0E"
     android:fillViewport="true">
 
@@ -271,7 +279,6 @@
             android:orientation="vertical"
             android:padding="18dp">
 
-            <!-- Header card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -331,7 +338,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Garis pemisah -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -350,7 +356,6 @@
                 android:textColor="#6B6040"
                 android:textSize="12sp" />
 
-            <!-- Tombol Reserve -->
             <TextView
                 android:id="@+id/txtReserveRegular"
                 android:layout_width="wrap_content"
@@ -378,7 +383,6 @@
             android:orientation="vertical"
             android:padding="18dp">
 
-            <!-- Header card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -459,7 +463,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Garis pemisah -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -467,7 +470,6 @@
                 android:layout_marginBottom="12dp"
                 android:background="#3A3010" />
 
-            <!-- Tombol Reserve VIP -->
             <TextView
                 android:id="@+id/txtReserveVip"
                 android:layout_width="wrap_content"
@@ -507,3 +509,159 @@
 
     </LinearLayout>
 </ScrollView>
+
+<!-- ============================================================ -->
+<!--   BOTTOM NAVIGATION BAR — fixed di paling bawah layar       -->
+<!-- ============================================================ -->
+<LinearLayout
+    android:id="@+id/bottomNavBar"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:layout_alignParentBottom="true"
+    android:background="#1A2A1A"
+    android:elevation="12dp"
+    android:orientation="horizontal">
+
+    <!-- ── TAB HOME (aktif) ────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/navHome"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <!-- Lingkaran highlight aktif -->
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+
+            <!-- Background bulat emas redup -->
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_nav_active" />
+
+            <ImageView
+                android:id="@+id/iconHome"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_home"
+                app:tint="#D4AF37" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Home"
+            android:textColor="#D4AF37"
+            android:textSize="9sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ── TAB RESERVATIONS ────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/navReservations"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/iconReservations"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_reservation"
+                app:tint="#4A5A3A" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Reservations"
+            android:textColor="#4A5A3A"
+            android:textSize="9sp" />
+    </LinearLayout>
+
+    <!-- ── TAB INFO ────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/navInfo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/iconInfo"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_info"
+                app:tint="#4A5A3A" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Info"
+            android:textColor="#4A5A3A"
+            android:textSize="9sp" />
+    </LinearLayout>
+
+    <!-- ── TAB PROFIL ──────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/navProfil"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/iconProfil"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_profile"
+                app:tint="#4A5A3A" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Profil"
+            android:textColor="#4A5A3A"
+            android:textSize="9sp" />
+    </LinearLayout>
+
+</LinearLayout>
+
+</RelativeLayout>

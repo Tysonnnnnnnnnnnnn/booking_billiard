@@ -4,11 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ScrollView // Diubah ke ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.alex.goldenbreak.api.RetrofitClient
@@ -25,33 +25,27 @@ class SignUpActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_sign_up)
 
-        val root = findViewById<ConstraintLayout>(R.id.main)
+        // Perbaikan di sini: Casting diubah dari ConstraintLayout ke ScrollView
+        val root = findViewById<ScrollView>(R.id.main)
 
         ViewCompat.setOnApplyWindowInsetsListener(root) { v, insets ->
-
-            val systemBars =
-                insets.getInsets(WindowInsetsCompat.Type.systemBars())
-
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(
                 systemBars.left,
                 systemBars.top,
                 systemBars.right,
                 systemBars.bottom
             )
-
             insets
         }
 
         val etEmail = findViewById<EditText>(R.id.etEmail2)
         val etUsername = findViewById<EditText>(R.id.etUsername2)
         val etPassword = findViewById<EditText>(R.id.etPassword2)
-
         val btnSignUp = findViewById<Button>(R.id.btnSignUp)
-
         val txtSignIn = findViewById<TextView>(R.id.txtSignIn)
 
         btnSignUp.setOnClickListener {
-
             val email = etEmail.text.toString().trim()
             val username = etUsername.text.toString().trim()
             val password = etPassword.text.toString().trim()
@@ -89,14 +83,11 @@ class SignUpActivity : AppCompatActivity() {
 
             RetrofitClient.instance.register(request)
                 .enqueue(object : Callback<RegisterResponse> {
-
                     override fun onResponse(
                         call: Call<RegisterResponse>,
                         response: Response<RegisterResponse>
                     ) {
-
                         if (response.isSuccessful) {
-
                             Toast.makeText(
                                 this@SignUpActivity,
                                 "Register berhasil",
@@ -109,11 +100,8 @@ class SignUpActivity : AppCompatActivity() {
                                     SignInActivity::class.java
                                 )
                             )
-
                             finish()
-
                         } else {
-
                             Toast.makeText(
                                 this@SignUpActivity,
                                 "Register gagal",
@@ -126,7 +114,6 @@ class SignUpActivity : AppCompatActivity() {
                         call: Call<RegisterResponse>,
                         t: Throwable
                     ) {
-
                         Toast.makeText(
                             this@SignUpActivity,
                             "Error: ${t.message}",
@@ -137,7 +124,6 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         txtSignIn.setOnClickListener {
-
             startActivity(
                 Intent(
                     this,

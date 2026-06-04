@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0E1A0E"
@@ -14,7 +15,6 @@
         android:orientation="vertical"
         android:paddingBottom="40dp">
 
-        <!-- ===== HERO SECTION ===== -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,7 +29,6 @@
                 android:layout_marginBottom="18dp"
                 android:background="#D4AF37" />
 
-            <!-- Logo berlapis -->
             <FrameLayout
                 android:layout_width="100dp"
                 android:layout_height="100dp">
@@ -80,7 +79,6 @@
                 android:textColor="#6B6040"
                 android:textSize="10sp" />
 
-            <!-- Ornamen diamond -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -107,7 +105,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- ===== FORM CARD ===== -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -138,7 +135,6 @@
                 android:textColor="#4A4730"
                 android:textSize="12sp" />
 
-            <!-- ─── Email ─── -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -185,7 +181,6 @@
                     android:textSize="13sp" />
             </LinearLayout>
 
-            <!-- ─── Username ─── -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -232,7 +227,6 @@
                     android:textSize="13sp" />
             </LinearLayout>
 
-            <!-- ─── Password ─── -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -285,7 +279,6 @@
                     app:tint="#3A3820" />
             </LinearLayout>
 
-            <!-- ─── Tombol Sign Up ─── -->
             <Button
                 android:id="@+id/btnSignUp"
                 android:layout_width="match_parent"
@@ -299,7 +292,6 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
-            <!-- Divider -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -329,7 +321,6 @@
                     android:background="#2A2A18" />
             </LinearLayout>
 
-            <!-- Link ke Sign In -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -358,7 +349,6 @@
 
         </LinearLayout>
 
-        <!-- Dekorasi bola biliar bawah -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
